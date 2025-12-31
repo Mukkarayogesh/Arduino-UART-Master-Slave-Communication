@@ -1,0 +1,21 @@
+#include<SoftwareSerial.h>    /////// SLAVE CODE
+SoftwareSerial UART(10,11);
+
+String data;
+
+void setup() {
+    UART.begin(9600);
+    Serial.begin(9600);
+
+
+}
+
+void loop() {
+  if(Serial.available()>0){
+  data = Serial.readStringUntil('\n');
+ data.trim();
+   UART.print("recived: ");
+     UART.println(data);
+}
+delay(500);
+}
