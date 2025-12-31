@@ -1,0 +1,17 @@
+#include<SoftwareSerial.h>    /////// MASTER CODE
+SoftwareSerial UART(10,11);
+
+void setup() {
+
+  Serial.begin(9600);
+  UART.begin(9600);
+
+}
+
+void loop() {
+
+  Serial.println("Adv Happy new Year");
+  UART.println("Send: Adv Happy new Year");
+  delay(500);
+
+}
